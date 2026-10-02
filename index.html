@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peter Park — Growth Cockpit</title>
+    <meta
+      name="description"
+      content="Country Architect & Growth Hacker: la roadmap esecutiva per l'espansione in Italia."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pp-green': '#00C27E',
+              'pp-greenHover': '#32d79a',
+              'pp-card': '#111827',
+              'pp-subcard': '#0f172a',
+              'pp-border': '#1f2a3b'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        background:
+          radial-gradient(circle at top, rgba(0, 194, 126, 0.12), transparent 30%),
+          #020817;
+      }
+      .ice-badge-high {
+        background: rgba(0, 194, 126, 0.15);
+        color: #5ef1b0;
+        border: 1px solid rgba(0, 194, 126, 0.4);
+      }
+      .ice-badge-mid {
+        background: rgba(59, 130, 246, 0.12);
+        color: #93c5fd;
+        border: 1px solid rgba(59, 130, 246, 0.35);
+      }
+    </style>
+  </head>
+  <body class="text-slate-100 antialiased">
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#0B111E]/95 backdrop-blur-md border-b border-pp-border px-4 py-3">
+      <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+        <div class="flex items-center gap-3">
+          <svg class="h-8 w-auto flex-shrink-0" viewBox="0 0 120 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M72 58 C72 58 80 58 84 66 C86 70 84 76 77 78 L53 78 C58 71 65 63 72 58 Z" fill="#009961"/>
+            <path d="M37 18 C46 6 62 0 83 0 C104 0 119 9 119 24 C119 38 107 48 88 48 L48 48 C43 48 40 45 41 40 L45 28 C45 23 41 18 37 18 Z" fill="#00C27E"/>
+            <path d="M57 15 L82 15 C92 15 99 18 99 24 C99 30 92 33 82 33 L52 33 L57 15 Z" fill="#0B111E"/>
+            <path d="M0 132 C13 118 26 92 35 68 L73 68 C87 68 96 73 96 82 C96 92 86 98 70 98 L37 98 C31 98 27 101 25 106 L14 128 C12 132 5 136 0 132 Z" fill="#00C27E"/>
+            <path d="M43 81 L68 81 C75 81 80 83 80 86 C80 89 75 91 68 91 L39 91 L43 81 Z" fill="#0B111E"/>
+          </svg>
+          <div class="flex flex-col">
+            <div class="flex items-baseline gap-2">
+              <span class="font-extrabold text-2xl tracking-tight text-pp-green lowercase">peter park<span class="text-xs font-bold align-super ml-0.5">®</span></span>
+              <span class="text-[10px] bg-pp-green/15 text-pp-green px-2 py-0.5 rounded-full border border-pp-green/40 font-mono font-bold tracking-wide">
+                GROWTH COCKPIT
+              </span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-medium -mt-0.5">
+              <span class="lang-it">Country Leadership & Growth Hacking Framework • Monaco Meeting (15 Ottobre 2026)</span>
+              <span class="lang-de hidden">Country Leadership & Growth-Hacking-Framework • München Meeting (15. Oktober 2026)</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex space-x-1 text-xs md:text-sm font-medium overflow-x-auto py-1">
+            <a href="#growth-matrix" class="hover:text-pp-green px-2.5 py-1 rounded transition text-slate-300">Profilo Ibrido</a>
+            <a href="#ice-backlog" class="text-pp-green font-bold hover:bg-pp-green hover:text-slate-950 px-2.5 py-1 rounded-lg bg-pp-green/15 border border-pp-green/40 transition">ICE Backlog</a>
+            <a href="#team-architecture" class="hover:text-pp-green px-2.5 py-1 rounded transition text-slate-300">Team Italia (3 FTE)</a>
+            <a href="#q4-roadmap" class="hover:text-pp-green px-2.5 py-1 rounded transition text-slate-300">Setup Q4 2026</a>
+            <a href="#pr-engine" class="hover:text-pp-green px-2.5 py-1 rounded transition text-slate-300">PR & Stampa</a>
+          </div>
+
+          <button onclick="toggleLang()" id="btn-lang" class="bg-pp-green text-slate-950 font-bold px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5 shadow-lg shadow-pp-green/20 hover:bg-pp-greenHover transition border border-pp-green">
+            <span>🌐</span>
+            <span id="lang-label">SPRACHE: DE</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-4 pt-10 pb-6 text-center md:text-left">
+      <div class="inline-flex items-center gap-2 bg-pp-green/10 text-pp-green border border-pp-green/30 text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full font-bold mb-3">
+        <span class="w-2 h-2 rounded-full bg-pp-green animate-pulse"></span>
+        <span class="lang-it">Strategia di Penetrazione Rapida • Partenza Operativa 1° Novembre 2026</span>
+        <span class="lang-de hidden">Schnelle Markteintrittsstrategie • Operativer Start 1. November 2026</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black tracking-tight mb-3 text-white">
+        <span class="lang-it">Country Architect & Growth Hacker: La Roadmap Esecutiva</span>
+        <span class="lang-de hidden">Country Architect & Growth Hacker: Der operative Fahrplan</span>
+      </h1>
+      <p class="text-slate-400 text-sm md:text-base max-w-4xl leading-relaxed">
+        <span class="lang-it">Non un venditore porta a porta isolato, ma un costruttore d'impatto ad alta densità: integrazione dei 2 commerciali attivi in Italia (Merano e Toscana), backlog di crescita con prioritizzazione ICE, prototipazione rapida AI-assisted, leva PR sui media nazionali (Luca Barbieri) e chiusura accordi quadro (Dolomiti Superski, Adler, ASA Hotel, Zucchetti).</span>
+        <span class="lang-de hidden">Kein isolierter Einzelvertriebler, sondern ein systemischer Skalierungs-Architekt: Orchestrierung der beiden bestehenden Italien-Ressourcen (Meran & Toskana), priorisiertes ICE-Backlog, KI-gestützte Schnellvalidierung, bundesweite PR-Kampagnen (Luca Barbieri) und strategische Rahmenverträge (Dolomiti Superski, Adler, ASA Hotel, Zucchetti).</span>
+      </p>
+    </header>
+
+    <section id="growth-matrix" class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-pp-card rounded-2xl p-6 md:p-8 border border-pp-border shadow-2xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
+              <span class="text-pp-green">⚡</span>
+              <span class="lang-it">1. Il Profilo Orizzontale: Il Triangolo del Growth Hacking</span>
+              <span class="lang-de hidden">1. Das horizontale Profil: Das Growth-Hacking-Dreieck</span>
+            </h2>
+            <p class="text-slate-400 text-xs mt-1">
+              <span class="lang-it">La convergenza di competenze necessarie per conquistare un mercato complesso senza bruciare capitale.</span>
+              <span class="lang-de hidden">Konvergierende Kernkompetenzen für die schnelle Marktbeherrschung ohne Kapitalverschwendung.</span>
+            </p>
+          </div>
+          <div class="flex items-center gap-2 bg-slate-900/90 border border-pp-green/40 px-3.5 py-1.5 rounded-xl text-xs">
+            <span class="text-slate-400">Approccio:</span>
+            <span class="font-bold text-pp-green font-mono">Test → Validate → Scale</span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4 text-xs">
+          <div class="bg-pp-subcard/70 border border-pp-border p-4 rounded-xl flex flex-col justify-between hover:border-pp-green/60 transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl">🤝</span>
+                <span class="text-[10px] font-mono text-pp-green bg-pp-green/10 px-2 py-0.5 rounded font-bold">PIPELINE & DEALS</span>
+              </div>
+              <h3 class="font-bold text-white text-sm mb-1.5">Enterprise Sales & Canali</h3>
+              <p class="text-slate-300 leading-relaxed">
+                Relazione diretta C-Level con <strong>Andy Varallo</strong> (Dolomiti Superski), proprietà <strong>Adler Resorts</strong>, oltre <strong>52 Direttori DMO</strong> e accordi con i CEO dei software PMS (ASA, Zucchetti, TeamSystem).
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-pp-green font-semibold">Zero chiamate a freddo.</div>
+          </div>
+
+          <div class="bg-pp-subcard/70 border border-pp-border p-4 rounded-xl flex flex-col justify-between hover:border-pp-green/60 transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl">🎯</span>
+                <span class="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded font-bold">GROWTH ENGINE</span>
+              </div>
+              <h3 class="font-bold text-white text-sm mb-1.5">Metodologia ICE & Backlog</h3>
+              <p class="text-slate-300 leading-relaxed">
+                Creazione e gestione di un backlog continuo di esperimenti di penetrazione. Ogni iniziativa è valutata su <strong>Impact (1-10)</strong>, <strong>Confidence (1-10)</strong> ed <strong>Ease (1-10)</strong> per allocare il budget dove il ROI è immediato.
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-blue-300 font-semibold">Prioritizzazione scientifica.</div>
+          </div>
+
+          <div class="bg-pp-subcard/70 border border-pp-border p-4 rounded-xl flex flex-col justify-between hover:border-pp-green/60 transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl">🤖</span>
+                <span class="text-[10px] font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded font-bold">AI-ASSISTED</span>
+              </div>
+              <h3 class="font-bold text-white text-sm mb-1.5">Prototipazione Rapida AI</h3>
+              <p class="text-slate-300 leading-relaxed">
+                Utilizzo avanzato di <strong>LLM (Claude / Anthropic)</strong> per costruire simulatori di ROI per i clienti, micrositi di pre-lancio e micro-strumenti operativi in 2 ore, validando le reazioni del mercato prima di mobilitare i programmatori a Monaco.
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-purple-300 font-semibold">Sviluppo a costo zero.</div>
+          </div>
+
+          <div class="bg-pp-subcard/70 border border-pp-border p-4 rounded-xl flex flex-col justify-between hover:border-pp-green/60 transition">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl">📰</span>
+                <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-bold">PR & MEDIA AUTHORITY</span>
+              </div>
+              <h3 class="font-bold text-white text-sm mb-1.5">Amplificazione Media Nazionale</h3>
+              <p class="text-slate-300 leading-relaxed">
+                Accordo diretto con <strong>Luca Barbieri (CEO City Vision)</strong>: copertura editoriale su <em>Il Sole 24 Ore, Corriere della Sera e Repubblica</em> a costi di agenzia agevolati per posizionare Peter Park come punto di riferimento etico nazionale.
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-amber-300 font-semibold">Barriera di fiducia immediata.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ice-backlog" class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-pp-card rounded-2xl p-6 md:p-8 border border-pp-border shadow-xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
+              <span class="text-pp-green">🎯</span>
+              <span class="lang-it">2. ICE Scoring Growth Backlog: Esperimenti & Iniziative Q4 2026 / Q1 2027</span>
+              <span class="lang-de hidden">2. ICE-Score Growth-Backlog: Priorisierte Initiativen Q4 2026 / Q1 2027</span>
+            </h2>
+            <p class="text-slate-400 text-xs mt-1">
+              <span class="lang-it">Formula ICE = (Impatto × Confidenza × Semplicità d'esecuzione). Clicca sui filtri per esplorare i pilastri operativi.</span>
+              <span class="lang-de hidden">ICE-Formel = (Impact × Confidence × Ease). Klicke auf die Filter für die operativen Säulen.</span>
+            </p>
+          </div>
+          <div class="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-pp-border text-xs">
+            <button onclick="filterIce('all')" id="btn-ice-all" class="px-3 py-1 rounded-lg bg-pp-green text-slate-950 font-bold transition">Tutti</button>
+            <button onclick="filterIce('pr')" id="btn-ice-pr" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">PR & Media</button>
+            <button onclick="filterIce('pms')" id="btn-ice-pms" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">PMS & Tech</button>
+            <button onclick="filterIce('vip')" id="btn-ice-vip" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">Grandi Clienti</button>
+            <button onclick="filterIce('legal')" id="btn-ice-legal" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">Legal & PRA</button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-pp-border bg-slate-900/80 text-slate-300 font-semibold">
+                <th class="p-3">Iniziativa / Esperimento Growth</th>
+                <th class="p-3">Categoria</th>
+                <th class="p-3 text-center">Impact (1-10)</th>
+                <th class="p-3 text-center">Confidence (1-10)</th>
+                <th class="p-3 text-center">Ease (1-10)</th>
+                <th class="p-3 text-center text-pp-green font-bold">ICE Score</th>
+                <th class="p-3">Deliverable & Metrica di Successo</th>
+              </tr>
+            </thead>
+            <tbody id="iceTableBody" class="divide-y divide-pp-border text-slate-300"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="team-architecture" class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-pp-card rounded-2xl p-6 md:p-8 border border-pp-border shadow-xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
+              <span class="text-pp-green">👥</span>
+              <span class="lang-it">3. Orchestrazione Risorse Esistenti: Il Pod Operativo Italiano</span>
+              <span class="lang-de hidden">3. Orchestrierung bestehender Ressourcen: Das Italien-Einsatzteam</span>
+            </h2>
+            <p class="text-slate-400 text-xs mt-1">
+              <span class="lang-it">Come valorizzare e coordinare le 2 figure già operative sul territorio senza sovrapposizioni e con ruoli definiti.</span>
+              <span class="lang-de hidden">Klare Rollenteilung für die 2 bereits aktiven Mitarbeiter in Italien ohne Reibungsverluste.</span>
+            </p>
+          </div>
+          <span class="text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/30 px-3 py-1 rounded-full font-bold">
+            3 Risorse Sinergiche dal 1° Novembre 2026
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 text-xs">
+          <div class="bg-slate-900/90 p-5 rounded-xl border-2 border-pp-green space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black uppercase text-pp-green">Tu (Country Head & Architect)</span>
+              <span class="bg-pp-green/20 text-pp-green px-2 py-0.5 rounded font-mono font-bold">LEADERSHIP</span>
+            </div>
+            <ul class="text-slate-200 space-y-2 leading-relaxed">
+              <li>• <strong>Governance & P&L</strong>: Responsabilità del budget complessivo della filiale e riporto a Max e Ben.</li>
+              <li>• <strong>Relazioni Istituzionali di Vertice</strong>: Andy Varallo (Dolomiti Superski), proprietà Adler Resorts, 52 Direttori DMO.</li>
+              <li>• <strong>Accordi di Canale PMS</strong>: Partnership tecniche con i CEO di ASA Hotel, Zucchetti e TeamSystem.</li>
+              <li>• <strong>Media & PR Strategy</strong>: Coordinamento con Luca Barbieri per la copertura stampa nazionale.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/90 p-5 rounded-xl border border-pp-border space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-white">Risorsa 1: Merano (Sales Alpine Hub)</span>
+              <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono font-bold">TERRITORIO NORD</span>
+            </div>
+            <ul class="text-slate-300 space-y-2 leading-relaxed">
+              <li>• <strong>Presidio Locale Alto Adige/Trentino</strong>: Gestione dei contatti caldi bilingui (IT/DE) sul territorio.</li>
+              <li>• <strong>Sopralluoghi Rapidi</strong>: Visita diretta a hotel consorziati, stazioni impiantistiche e parcheggi del Trentino-Alto Adige.</li>
+              <li>• <strong>Follow-up & Closing Operativo</strong>: Chiusura contratti standard su hotel 4-5 stelle agganciati all'ecosistema ASA Hotel.</li>
+              <li>• <em>Obiettivo</em>: Trasformare la risorsa da battitore isolato a braccio commerciale d'élite dell'hub alpino.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/90 p-5 rounded-xl border border-pp-border space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase text-white">Risorsa 2: Toscana (Centro Italia / Ops)</span>
+              <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono font-bold">CENTRO / RETAIL</span>
+            </div>
+            <ul class="text-slate-300 space-y-2 leading-relaxed">
+              <li>• <strong>Audit delle Competenze (Mese 1)</strong>: Verificare se ha un profilo commerciale o tecnico/operation per valorizzarlo al meglio.</li>
+              <li>• <strong>Se Sales</strong>: Assegnazione dell'area Toscana/Emilia per la vendita diretta alle catene di supermercati regionali (Conad, Coop) e cliniche.</li>
+              <li>• <strong>Se Tecnico/Field</strong>: Coordinamento degli installatori partner del Centro-Nord e configurazione cloud dei varchi.</li>
+              <li>• <em>Obiettivo</em>: Dare direzione strategica chiara evitando sovrapposizioni territoriali.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="q4-roadmap" class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-pp-card rounded-2xl p-6 md:p-8 border border-pp-border shadow-xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
+              <span class="text-pp-green">📅</span>
+              <span class="lang-it">4. Setup Roadmap Q4 2026 (Novembre – Dicembre 2026)</span>
+              <span class="lang-de hidden">4. Aufbau-Fahrplan Q4 2026 (November – Dezember 2026)</span>
+            </h2>
+            <p class="text-slate-400 text-xs mt-1">
+              <span class="lang-it">Partenza operativa post-colloquio del 15 Ottobre a Monaco. 60 giorni per preparare la scalata 2027.</span>
+              <span class="lang-de hidden">Operativer Start nach dem München-Meeting am 15. Oktober. 60 Tage bis zur 2027-Skalierung.</span>
+            </p>
+          </div>
+          <div class="text-xs font-mono bg-pp-green/10 text-pp-green px-3 py-1 rounded-full border border-pp-green/30 font-bold">
+            60 Giorni ad Alta Intensità
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-xs">
+          <div class="bg-slate-900/80 p-5 rounded-xl border-l-4 border-pp-green space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-white text-sm">NOVEMBRE 2026: Fondamenta Legali & Accordi PMS</span>
+              <span class="text-[10px] bg-pp-green/20 text-pp-green px-2 py-0.5 rounded font-mono font-bold">MESE 1</span>
+            </div>
+            <ul class="text-slate-300 space-y-2 leading-relaxed">
+              <li>• <strong>Settimana 1-2 (Allineamento Team)</strong>: Incontro operativo a Bolzano con la risorsa di Merano e call con la risorsa in Toscana. Definizione dei perimetri commerciali.</li>
+              <li>• <strong>Settimana 2-3 (Pacchetto Privacy & Legal)</strong>: Redazione DPIA standard certificata conforme all'ordinanza Cassazione 4648/2024 (cancellazione log 48h) e bozza accordo sindacale Art. 4 Statuto Lavoratori.</li>
+              <li>• <strong>Settimana 3-4 (Canale Recupero Crediti PRA)</strong>: Firma convenzione con agenzia pratiche auto accreditata ACI per visure PRA automatizzate sotto i 3,50 € (scatto solo su insoluti >35 €).</li>
+              <li>• <strong>Tavoli Tecnici PMS</strong>: Apertura dialogo tecnico con CTO di <strong>ASA Hotel</strong> (Merano) e <strong>Zucchetti Hospitality</strong> per definire il modulo connettore API.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border-l-4 border-blue-500 space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-white text-sm">DICEMBRE 2026: Progetti Faro & Budget Esecutivo 2027</span>
+              <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded font-mono font-bold">MESE 2</span>
+            </div>
+            <ul class="text-slate-300 space-y-2 leading-relaxed">
+              <li>• <strong>Progetto Faro Adler Resorts</strong>: Presentazione dello studio di fattibilità alla proprietà Adler per l'installazione pilota "Zero Ticket" nei garage di Ortisei e Alpe di Siusi.</li>
+              <li>• <strong>Dolomiti Superski (Andy Varallo)</strong>: Validazione del test d'integrazione targa-skipass per un parcheggio di attestamento strategico in Alta Badia per la stagione invernale.</li>
+              <li>• <strong>Contratti Rete Installatori</strong>: Convenzionamento di 3 società di impianti elettrici e sicurezza nel Triveneto e Lombardia per sopralluoghi e posa in 24-48 ore.</li>
+              <li>• <strong>Consolidamento Budget 2027</strong>: Chiusura del piano vendite target (45 impianti, 1.000.000 € fatturato, 85.000 € EBITDA) pronto per l'esecuzione da gennaio.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pr-engine" class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-gradient-to-br from-pp-card via-slate-900 to-amber-950/20 rounded-2xl p-6 md:p-8 border-2 border-amber-500/40 shadow-xl">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs uppercase tracking-widest px-3 py-1 rounded-full font-bold">
+            <span>📰</span>
+            <span class="lang-it">Macchina PR & Diffusione Mediatica Nazionale</span>
+            <span class="lang-de hidden">PR-Maschinerie & Nationale Medienreichweite</span>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">Partnership Strategica con Luca Barbieri</span>
+        </div>
+
+        <h2 class="text-xl md:text-2xl font-extrabold text-white mb-2">
+          <span class="lang-it">Costruire l'Autorità di Mercato: Dai Grandi Quotidiani alle Vendite</span>
+          <span class="lang-de hidden">Markt-Autorität aufbauen: Von Leitmedien direkt zu Sales</span>
+        </h2>
+        <p class="text-slate-300 text-xs md:text-sm mb-6 max-w-4xl leading-relaxed">
+          <span class="lang-it">Invece di spendere centinaia di migliaia di euro in campagne pubblicitarie generiche, attiviamo un canale di media relations autorevole attraverso <strong>Luca Barbieri (CEO City Vision / Blum)</strong>. L'obiettivo è generare articoli redazionali e inchieste che presentano Peter Park come l'alternativa etica e tecnologica, aprendo le porte di Comuni e catene retail.</span>
+          <span class="lang-de hidden">Gezielte Medienarbeit über <strong>Luca Barbieri (CEO City Vision)</strong>: Nationale Berichterstattung in <em>Il Sole 24 Ore, Corriere della Sera und la Repubblica</em> etabliert Peter Park als ethischen Vorreiter.</span>
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-5 text-xs">
+          <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/80">
+            <span class="text-amber-400 font-bold text-sm block mb-1">1. Angolo Notizioso "Anti-Parkdepot"</span>
+            <p class="text-slate-300 leading-relaxed">
+              <em>"Basta multe selvagge nei parcheggi dei supermercati: arriva in Italia la tecnologia etica tedesca che difende lo scontrino medio senza punire i consumatori."</em> Ideale per <strong>Corriere della Sera</strong> e <strong>Repubblica</strong>.
+            </p>
+          </div>
+          <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/80">
+            <span class="text-amber-400 font-bold text-sm block mb-1">2. Angolo Economico "Transizione 5.0"</span>
+            <p class="text-slate-300 leading-relaxed">
+              <em>"Smart mobility e risparmio energetico: come la digitalizzazione dei varchi fa risparmiare fino al 45% alle aziende con il credito d'imposta."</em> Articolo mirato su <strong>Il Sole 24 Ore</strong> per parlare direttamente ai CFO.
+            </p>
+          </div>
+          <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-700/80">
+            <span class="text-amber-400 font-bold text-sm block mb-1">3. Palcoscenico City Vision Padova</span>
+            <p class="text-slate-300 leading-relaxed">
+              Posizionamento di Peter Park nei panel ufficiali sugli hub di mobilità sostenibile, con interviste dirette ai sindaci e Mobility Manager presenti all'evento a costo ridotto riservato (4k-5k€).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-4">
+      <div class="bg-pp-card rounded-2xl p-6 md:p-8 border border-pp-border shadow-xl">
+        <h2 class="text-xl md:text-2xl font-bold text-white mb-3 flex items-center gap-2">
+          <span class="text-pp-green">💬</span>
+          <span class="lang-it">5. Sintesi Strategica: Le Frasi Chiave per il Meeting a Monaco (15 Ottobre)</span>
+          <span class="lang-de hidden">5. Strategische Synthese: Kernbotschaften für das München-Meeting (15. Okt.)</span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 bg-slate-900/80 rounded-xl border border-pp-border space-y-2">
+            <strong class="text-pp-green block text-sm">Sul Ruolo e la Squadra Esistente:</strong>
+            <p class="text-slate-300 italic leading-relaxed">
+              "Max, Christoph: l'Italia non ha bisogno di un venditore in più che bussa a freddo. Avete già una risorsa a Merano e una in Toscana. Quello che serve è un <strong>Country Architect con mentalità da Growth Hacker</strong>: una guida che dia una strategia coerente alla squadra, crei partnership a monte con i gestionali alberghieri (ASA Hotel, Zucchetti) e chiuda accordi faro con chi possiede migliaia di stalli, come Dolomiti Superski e Adler Resorts."
+            </p>
+          </div>
+          <div class="p-4 bg-slate-900/80 rounded-xl border border-pp-border space-y-2">
+            <strong class="text-pp-green block text-sm">Sull'Approccio Tecnologico & AI:</strong>
+            <p class="text-slate-300 italic leading-relaxed">
+              "Nel mio modo di lavorare, non aspetto che il team dev di Monaco crei un modulo per testare un'opportunità. Utilizzo strumenti AI avanzati per prototipare simulatori, calcolatori di ROI e landing page in poche ore. Se un'iniziativa funziona sul campo, la scaliamo scientificamente secondo la metodologia ICE."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 pt-6 border-t border-pp-border">
+      <p class="text-slate-400 font-bold"><span class="text-pp-green lowercase">peter park</span> System GmbH • Country Leadership & Growth Hacking Framework (Italia 2026–2027)</p>
+      <p class="mt-1">Preparato per l'incontro direzionale in presenza del 15 Ottobre 2026 a Monaco di Baviera con Maximilian Schlereth (CEO) e Christoph Heinle (CTO).</p>
+    </footer>
+
+    <script>
+      let currentLang = 'it';
+
+      const iceExperiments = [
+        {
+          title: 'Partnership API con ASA Hotel & Zucchetti',
+          cat: 'PMS & Tech',
+          catKey: 'pms',
+          impact: 9.5,
+          conf: 9.0,
+          ease: 7.5,
+          score: 641,
+          deliverable: 'Connettore integrato che sblocca >80% degli hotel 4-5 stelle dell\'arco alpino a costo zero.'
+        },
+        {
+          title: 'Accordo Pilota Skipass con Andy Varallo (Dolomiti Superski)',
+          cat: 'Grandi Clienti',
+          catKey: 'vip',
+          impact: 9.8,
+          conf: 8.5,
+          ease: 7.0,
+          score: 583,
+          deliverable: 'Associazione skipass-targa su parcheggi cabinovie Alta Badia. Referenza mondiale su neve e gelo.'
+        },
+        {
+          title: 'Campagna Media Nazionale con Luca Barbieri (City Vision)',
+          cat: 'PR & Media',
+          catKey: 'pr',
+          impact: 8.5,
+          conf: 9.0,
+          ease: 8.5,
+          score: 650,
+          deliverable: 'Copertura su Sole 24 Ore, Corriere e Repubblica sul modello etico barrier-free vs Parkdepot.'
+        },
+        {
+          title: 'Setup Procedura Legale Visure PRA (<3,50 €) per Insoluti',
+          cat: 'Legal & PRA',
+          catKey: 'legal',
+          impact: 9.0,
+          conf: 9.5,
+          ease: 8.0,
+          score: 684,
+          deliverable: 'Convenzione ACI per recupero crediti solo su recidivi (>35€) nel pieno rispetto della privacy.'
+        },
+        {
+          title: 'Progetto Pilota \'Zero Barriere\' Gruppo Adler Resorts',
+          cat: 'Grandi Clienti',
+          catKey: 'vip',
+          impact: 8.8,
+          conf: 8.8,
+          ease: 8.0,
+          score: 620,
+          deliverable: 'Eliminazione sbarre nei garage di Ortisei e Alpe di Siusi con addebito su conto camera.'
+        },
+        {
+          title: 'Micro-Simulatore ROI Interattivo AI per Vendite GDO',
+          cat: 'PMS & Tech',
+          catKey: 'pms',
+          impact: 7.8,
+          conf: 9.5,
+          ease: 9.5,
+          score: 704,
+          deliverable: 'Tool leggero per mostrare ai CFO dei supermercati il rientro dell\'investimento in <3 mesi.'
+        },
+        {
+          title: 'Orchestrazione Commerciale Risorsa Merano & Toscana',
+          cat: 'Legal & PRA',
+          catKey: 'legal',
+          impact: 8.5,
+          conf: 9.0,
+          ease: 8.5,
+          score: 650,
+          deliverable: 'Definizione perimetri di vendita, target mensili e affiancamento sui primi sopralluoghi.'
+        }
+      ];
+
+      function renderIceTable(filter = 'all') {
+        const tbody = document.getElementById('iceTableBody');
+        tbody.innerHTML = '';
+
+        const filtered = filter === 'all' ? iceExperiments : iceExperiments.filter(e => e.catKey === filter);
+
+        filtered.sort((a, b) => b.score - a.score).forEach(exp => {
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-900/50 transition';
+          tr.innerHTML = `
+            <td class="p-3 font-semibold text-white">${exp.title}</td>
+            <td class="p-3"><span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono text-[10px]">${exp.cat}</span></td>
+            <td class="p-3 text-center font-mono font-bold">${exp.impact.toFixed(1)}</td>
+            <td class="p-3 text-center font-mono font-bold">${exp.conf.toFixed(1)}</td>
+            <td class="p-3 text-center font-mono font-bold">${exp.ease.toFixed(1)}</td>
+            <td class="p-3 text-center"><span class="px-2 py-0.5 rounded font-mono font-extrabold ${exp.score > 640 ? 'ice-badge-high' : 'ice-badge-mid'}">${Math.round(exp.score)}</span></td>
+            <td class="p-3 text-slate-400">${exp.deliverable}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function filterIce(key) {
+        ['all', 'pr', 'pms', 'vip', 'legal'].forEach(k => {
+          const btn = document.getElementById(`btn-ice-${k}`);
+          if (k === key) {
+            btn.className = 'px-3 py-1 rounded-lg bg-pp-green text-slate-950 font-bold transition';
+          } else {
+            btn.className = 'px-3 py-1 rounded-lg text-slate-400 hover:text-white transition';
+          }
+        });
+        renderIceTable(key);
+      }
+
+      function toggleLang() {
+        const itEls = document.querySelectorAll('.lang-it');
+        const deEls = document.querySelectorAll('.lang-de');
+        const label = document.getElementById('lang-label');
+
+        if (currentLang === 'it') {
+          itEls.forEach(el => el.classList.add('hidden'));
+          deEls.forEach(el => el.classList.remove('hidden'));
+          label.innerText = 'LINGUA: IT';
+          currentLang = 'de';
+          document.documentElement.lang = 'de';
+        } else {
+          itEls.forEach(el => el.classList.remove('hidden'));
+          deEls.forEach(el => el.classList.add('hidden'));
+          label.innerText = 'SPRACHE: DE';
+          currentLang = 'it';
+          document.documentElement.lang = 'it';
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        renderIceTable('all');
+      });
+    </script>
+  </body>
+</html>
